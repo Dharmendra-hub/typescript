@@ -1,10 +1,15 @@
-function add(n1: number, n2: number) {
-    return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Dharmendra';
+
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
 
-const number1 = 5;
-const number2 = 5.9;
+function generateError(message: string, code: number): never {
+    throw { message: message, errorCode: code };
+}
 
-const result = add(number1, number2);
-
-console.log(result);
+generateError('An error occured...!', 500);
